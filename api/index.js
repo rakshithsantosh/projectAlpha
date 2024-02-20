@@ -13,6 +13,14 @@ const app = express();
 
 app.use(express.json());
 
+const cors = require('cors');
+app.use(cors());
+
+const corsOptions = {
+    origin: 'http://localhost:5173',
+  };
+  app.use(cors(corsOptions));
+  
 app.use("/api/user",userRouter)
 app.use("/api/auth",authRouter)
 
