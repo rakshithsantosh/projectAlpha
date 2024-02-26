@@ -45,7 +45,7 @@ export default function Profile() {
       <h1 className="text-3xl font-semibold text-center my-7">Profile</h1>
       <form className="flex flex-col gap-4">
         <input onChange={(e)=>{setFile(e.target.files[0])}} type="file" ref={fileRef} hidden accept='image/*'/>
-        <img onClick={()=>{fileRef.current.click()}}src="https://plus.unsplash.com/premium_photo-1706517229039-3e0a3eeb27ef?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxN3x8fGVufDB8fHx8fA%3D%3D" alt="profile" className="rounded-full h-24 w-24 object-cover cursor-pointer self-center mt-2" />
+        <img onClick={()=>{fileRef.current.click()}}src={formData.avatar || "https://plus.unsplash.com/premium_photo-1706517229039-3e0a3eeb27ef?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxN3x8fGVufDB8fHx8fA%3D%3D"} alt="profile" className="rounded-full h-24 w-24 object-cover cursor-pointer self-center mt-2" />
         <p className='text-sm self-center'>{fileUploadError?(<span className='text-red-700'>Error Image Upload</span>):filePerc>0 && filePerc<100 ?(<span className='text-slate-700'>{`Uploading ${filePerc} %`}</span>):filePerc ===100?(<span className='text-green-700'>Image successfully uploaded!</span>):""}</p>
         <input type="text" placeholder="Username" id="username"className="border p-3 rounded-lg"/>
         <input type="email" placeholder="email" id="email"className="border p-3 rounded-lg"/>
