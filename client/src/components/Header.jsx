@@ -26,8 +26,7 @@ export default function Header() {
                 <li className='hidden sm:inline text-slate-700 hover:underline'>About</li>
                 </Link>
                 <Link to='/profile'>
-                {currentUser ? /*(<img className="rounded-full h-7 w-7 object-cover" src='currentUser.avatar' alt="profile"/>)*/
-                (<li className='text-slate-700 hover:underline'>Profile</li>)     
+                {currentUser ? (<img className="rounded-full h-7 w-7 object-cover" src='currentUser.avatar' alt="profile"/>)     
                 : (<li className='text-slate-700 hover:underline'>Sign In</li>)}
                 </Link>
             </ul>
