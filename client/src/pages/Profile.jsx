@@ -9,11 +9,12 @@ import { useDispatch } from 'react-redux'
 export default function Profile() {
   const dispatch = useDispatch()
   const fileRef = useRef(null)
-  const {currentUser} = useSelector((state)=>state.user)
+  const {currentUser,error} = useSelector((state)=>state.user)
   const [file,setFile] = useState(undefined)
   const [filePerc,setFilePerc] = useState(0)
   const [fileUploadError,setFileUploadError] = useState(false)
   const [formData,setFormData] = useState({})
+  const [updateSuccess,setUpdateSuccess] = useState(false)
 
   useEffect(()=>{
     if(file){
@@ -66,6 +67,7 @@ export default function Profile() {
         return
       }
       dispatch(updateUserSuccess(data))
+      setUpdateSuccess(true)
     } catch (error) {
       dispatch(updateUserFailure(error.message))
     }
@@ -87,6 +89,8 @@ export default function Profile() {
         <span className="text-red-700 cursor-pointer">Delete Account</span>
         <span className="text-red-700 cursor-pointer">Sign Out</span>
       </div>
+      <p className='text-red-700 mt-5'>{error?error:''}</p>
+      <p className='text-green-700 mt-5'>{updateSuccess?'User is updated successfully':''}</p>
     </div>
   )
 }
