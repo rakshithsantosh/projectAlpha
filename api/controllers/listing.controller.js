@@ -52,7 +52,7 @@ export const updateListing = async (req, res, next) => {
 
 export const getListing = async (req, res, next) => {
   try {
-    const listing = await Listing.findById(req.params.id);
+    const listing = await Listing.findById(req.params.id); 
     if (!listing) {
       return next(errorHandler(404, 'Listing not found!'));
     }
@@ -61,6 +61,18 @@ export const getListing = async (req, res, next) => {
     next(error);
   }
 };
+
+export const getData = async (req,res,next) => {
+  try {
+    const data = await Listing.find();
+  if(!data){
+    return next(errorHandler(404,'Listing Data not found!'))
+  }
+  res.status(200).json(data);
+  } catch (error) {
+    next(error)
+  }
+}
 
 export const getListings = async (req, res, next) => {
   try {
@@ -112,3 +124,4 @@ export const getListings = async (req, res, next) => {
     next(error);
   }
 };
+
