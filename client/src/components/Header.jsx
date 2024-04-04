@@ -57,6 +57,11 @@ export default function Header() {
               About
             </li>
           </Link>
+          <Link to='/compare'>
+            <li className='hidden sm:inline text-slate-700 hover:underline'>
+              Compare
+            </li>
+          </Link>
           <Link to='/profile'>
             {currentUser ? (
               <img
