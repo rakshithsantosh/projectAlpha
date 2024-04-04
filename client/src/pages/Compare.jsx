@@ -128,19 +128,19 @@ export default function Compare() {
             <div id="addressOne" className="text-xl"></div>
             </li>
             <li className='flex items-center gap-1 whitespace-nowrap '>
-                {showOne ? <FaBed className='text-lg' />:''}
+                {showOne ? <FaBed className='text-green-700 text-lg' />:''}
                 <div id='bedOne'></div>
             </li>
             <li className='flex items-center gap-1 whitespace-nowrap '>
-                {showOne ? <FaBath className='text-lg' />:''}
+                {showOne ? <FaBath className='text-green-700 text-lg' />:''}
                 <div id='bathOne'></div>
             </li>
             <li className='flex items-center gap-1 whitespace-nowrap '>
-                {showOne ? <FaParking className='text-lg' />:''}
+                {showOne ? <FaParking className='text-green-700 text-lg' />:''}
                 <div id='parkingOne'></div>
             </li>
             <li className='flex items-center gap-1 whitespace-nowrap '>
-                {showOne ? <FaChair className='text-lg' />:''}
+                {showOne ? <FaChair className='text-green-700 text-lg' />:''}
                 <div id='furnishedOne'></div>
             </li>
           </div>
@@ -151,19 +151,19 @@ export default function Compare() {
             <div id="addressTwo" className="text-xl "></div>
             </li>
             <li className='flex items-center gap-1 whitespace-nowrap '>
-                {showTwo ? <FaBed className='text-lg' />:''}
+                {showTwo ? <FaBed className='text-green-700 text-lg' />:''}
                 <div id='bedTwo'></div>
             </li>
             <li className='flex items-center gap-1 whitespace-nowrap '>
-                {showTwo ? <FaBath className='text-lg' />:''}
+                {showTwo ? <FaBath className=' text-green-700 text-lg' />:''}
                 <div id='bathTwo'></div>
             </li>
             <li className='flex items-center gap-1 whitespace-nowrap '>
-                {showTwo ? <FaParking className='text-lg' />:''}
+                {showTwo ? <FaParking className='text-green-700 text-lg' />:''}
                 <div id='parkingTwo'></div>
             </li>
             <li className='flex items-center gap-1 whitespace-nowrap '>
-                {showTwo ? <FaChair className='text-lg' />:''}
+                {showTwo ? <FaChair className='text-green-700 text-lg' />:''}
                 <div id='furnishedTwo'></div>
             </li>
           </div>
