@@ -4,6 +4,7 @@ import {
   FaBed,
   FaChair,
   FaParking,
+  FaMapMarkerAlt,
 } from 'react-icons/fa';
 
 export default function Compare() {
@@ -39,7 +40,25 @@ export default function Compare() {
     else{
       document.getElementById('bedOne').innerHTML = `${data[a].bedrooms} bed`
     }
-  
+    if(data[a].bathrooms>1){
+      document.getElementById('bathOne').innerHTML = `${data[a].bathrooms} baths`
+    }
+    else{
+      document.getElementById('bathOne').innerHTML = `${data[a].bathrooms} bath`
+    }
+    if(data[a].parking){
+      document.getElementById('parkingOne').innerHTML = `Parking spot`
+    }
+    else{
+      document.getElementById('parkingOne').innerHTML = `No Parking`
+    }
+    if(data[a].furnished){
+      document.getElementById('furnishedOne').innerHTML = `Furnished`
+    }
+    else{
+      document.getElementById('furnishedOne').innerHTML = `UnFurnished`
+    }
+    document.getElementById('addressOne').innerHTML = `${data[a].address}`
   }
 
   const showListingTwo = async (a) => {
@@ -54,6 +73,25 @@ export default function Compare() {
     else{
       document.getElementById('bedTwo').innerHTML = `${data[a].bedrooms} bed`
     }
+    if(data[a].bathrooms>1){
+      document.getElementById('bathTwo').innerHTML = `${data[a].bathrooms} baths`
+    }
+    else{
+      document.getElementById('bathTwo').innerHTML = `${data[a].bathrooms} bath`
+    }
+    if(data[a].parking){
+      document.getElementById('parkingTwo').innerHTML = `Parking spot`
+    }
+    else{
+      document.getElementById('parkingTwo').innerHTML = `No Parking`
+    }
+    if(data[a].furnished){
+      document.getElementById('furnishedTwo').innerHTML = `Furnished`
+    }
+    else{
+      document.getElementById('furnishedTwo').innerHTML = `UnFurnished`
+    }
+    document.getElementById('addressTwo').innerHTML = `${data[a].address}`
   }
 
   return (
@@ -85,16 +123,48 @@ export default function Compare() {
         <div className="p-4 grid grid-cols-2 gap-8">
           <div className="flex flex-col justify-center items-center">
             <p id="descriptionOne" className="text-xl"></p>
+            <li className='flex items-center mt-5 mb-5 gap-1 whitespace-nowrap '>
+             {showOne? <FaMapMarkerAlt className='text-green-700 mx-2' />:''}
+            <div id="addressOne" className="text-xl"></div>
+            </li>
             <li className='flex items-center gap-1 whitespace-nowrap '>
                 {showOne ? <FaBed className='text-lg' />:''}
                 <div id='bedOne'></div>
             </li>
+            <li className='flex items-center gap-1 whitespace-nowrap '>
+                {showOne ? <FaBath className='text-lg' />:''}
+                <div id='bathOne'></div>
+            </li>
+            <li className='flex items-center gap-1 whitespace-nowrap '>
+                {showOne ? <FaParking className='text-lg' />:''}
+                <div id='parkingOne'></div>
+            </li>
+            <li className='flex items-center gap-1 whitespace-nowrap '>
+                {showOne ? <FaChair className='text-lg' />:''}
+                <div id='furnishedOne'></div>
+            </li>
           </div>
           <div className="flex flex-col justify-center items-center">
             <p id="descriptionTwo" className="text-xl"></p>
+            <li className='flex items-center mt-5 mb-5 gap-1 whitespace-nowrap '>
+             {showOne? <FaMapMarkerAlt className='text-green-700 mx-2' />:''}
+            <div id="addressTwo" className="text-xl "></div>
+            </li>
             <li className='flex items-center gap-1 whitespace-nowrap '>
                 {showTwo ? <FaBed className='text-lg' />:''}
                 <div id='bedTwo'></div>
+            </li>
+            <li className='flex items-center gap-1 whitespace-nowrap '>
+                {showTwo ? <FaBath className='text-lg' />:''}
+                <div id='bathTwo'></div>
+            </li>
+            <li className='flex items-center gap-1 whitespace-nowrap '>
+                {showTwo ? <FaParking className='text-lg' />:''}
+                <div id='parkingTwo'></div>
+            </li>
+            <li className='flex items-center gap-1 whitespace-nowrap '>
+                {showTwo ? <FaChair className='text-lg' />:''}
+                <div id='furnishedTwo'></div>
             </li>
           </div>
         </div>
